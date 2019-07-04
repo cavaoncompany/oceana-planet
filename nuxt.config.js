@@ -42,7 +42,13 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    [
+      'nuxt-leaflet',
+      {
+        /* module options */
+      }
+    ]
   ],
   /*
    ** Axios module configuration
