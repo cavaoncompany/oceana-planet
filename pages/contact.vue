@@ -1,6 +1,7 @@
 <template>
   <div class="contact">
-    <Header />
+    <Header page="contact" />
+    <div class="contact-content">Contact us</div>
     <Footer />
   </div>
 </template>
@@ -16,3 +17,17 @@ export default {
   }
 }
 </script>
+
+<style>
+.contact {
+  margin: 0 auto;
+  height: 100vh;
+  text-align: center;
+  background-color: #60abcb;
+  font-family: 'Ubuntu', sans-serif;
+}
+.contact .contact-content {
+  height: 80%;
+  padding-top: 50px;
+}
+</style>

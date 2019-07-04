@@ -9,13 +9,45 @@
     </div>
     <nav class="header-right">
       <ul class="navigation">
-        <li>HOME</li>
-        <li>ABOUT</li>
-        <li>CONTACT</li>
+        <li>
+          <a href="/" class="home" :class="{ highlighted: page === 'home' }">
+            HOME
+          </a>
+        </li>
+        <li>
+          <a
+            href="/about"
+            class="about"
+            :class="{ highlighted: page === 'about' }"
+          >
+            ABOUT
+          </a>
+        </li>
+        <li>
+          <a
+            href="/contact"
+            class="contact"
+            :class="{ highlighted: page === 'contact' }"
+          >
+            CONTACT
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
 </template>
+
+<script>
+export default {
+  props: {
+    page: {
+      required: true,
+      type: String,
+      default: 'home'
+    }
+  }
+}
+</script>
 
 <style>
 .header {
@@ -48,7 +80,13 @@
 .navigation li {
   padding-top: 20px;
   list-style-type: none;
+}
+.navigation li a {
   color: #ffffff;
   font-size: 14px;
+  text-decoration: none;
+}
+.navigation li .highlighted {
+  color: #15468e;
 }
 </style>

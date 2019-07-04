@@ -1,6 +1,7 @@
 <template>
   <div class="about">
-    <Header />
+    <Header page="about" />
+    <div class="about-content">About us</div>
     <Footer />
   </div>
 </template>
@@ -16,3 +17,17 @@ export default {
   }
 }
 </script>
+
+<style>
+.about {
+  margin: 0 auto;
+  height: 100vh;
+  text-align: center;
+  background-color: #60abcb;
+  font-family: 'Ubuntu', sans-serif;
+}
+.about .about-content {
+  height: 80%;
+  padding-top: 50px;
+}
+</style>

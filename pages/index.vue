@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Header />
+    <Header page="home" />
     <Map />
     <Footer />
   </div>
