@@ -6,7 +6,14 @@
         Together we can make a difference to make changes to global warming.
       </p>
     </div>
-    <div class="map-container" />
+    <div class="map-container">
+      <img
+        id="tree1"
+        class="tree"
+        src="/images/tree-large-round.png"
+        alt="big tree"
+      />
+    </div>
   </div>
 </template>
 
@@ -29,8 +36,12 @@
 .map-container {
   background-image: url('/images/map.png');
   height: 100%;
-  width: 100%;
+  width: 960px;
+  margin: 0 auto;
   background-size: contain;
   background-repeat: no-repeat;
+}
+#tree1 {
+  height: 50px;
 }
 </style>
