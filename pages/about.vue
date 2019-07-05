@@ -29,6 +29,7 @@ export default {
   font-family: 'Ubuntu', sans-serif;
 }
 .about .about-content {
+  margin: 50px 0;
   height: 80%;
   padding-top: 50px;
 }

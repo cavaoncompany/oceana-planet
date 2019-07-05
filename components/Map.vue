@@ -105,7 +105,8 @@ export default {
   width: 150px;
   padding: 20px;
   z-index: 1;
-  border-radius: 5px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
 }
 .tree-info h2 {
   color: #4e9939;
