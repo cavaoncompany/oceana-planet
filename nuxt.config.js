@@ -36,7 +36,7 @@ module.exports = {
    */
   plugins: [],
   server: {
-    port: 3003 // default: 3000
+    port: 4000 // default: 3000
   },
   /*
    ** Nuxt.js modules
