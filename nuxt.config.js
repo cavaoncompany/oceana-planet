@@ -35,6 +35,9 @@ module.exports = {
    ** Plugins to load before mounting the App
    */
   plugins: [],
+  server: {
+    port: 3003 // default: 3000
+  },
   /*
    ** Nuxt.js modules
    */
