@@ -1,7 +1,9 @@
 <template>
   <div class="about">
     <Header page="about" />
-    <div class="about-content">About us</div>
+    <div class="about-content">
+      About us
+    </div>
     <Footer />
   </div>
 </template>

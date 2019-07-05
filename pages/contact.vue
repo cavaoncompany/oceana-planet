@@ -1,7 +1,9 @@
 <template>
   <div class="contact">
     <Header page="contact" />
-    <div class="contact-content">Contact us</div>
+    <div class="contact-content">
+      Contact us
+    </div>
     <Footer />
   </div>
 </template>
