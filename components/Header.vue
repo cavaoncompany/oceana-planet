@@ -51,6 +51,7 @@ export default {
 
 <style>
 .header {
+  max-width: 1080px;
   width: 100%;
   padding: 0 50px;
   display: flex;
