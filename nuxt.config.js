@@ -34,7 +34,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: '~plugins/leaflet.js', ssr: false }],
   server: {
     port: 4000 // default: 3000
   },
@@ -45,13 +45,7 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/eslint-module',
-    [
-      'nuxt-leaflet',
-      {
-        /* module options */
-      }
-    ]
+    '@nuxtjs/eslint-module'
   ],
   /*
    ** Axios module configuration

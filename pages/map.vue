@@ -11,12 +11,38 @@
       <no-ssr>
         <l-map
           class="mappy"
-          :no-wrap="true"
-          :zoom="2.4"
-          :center="[47.41322, -1.219482]"
+          :zoom="zoom"
+          :center="center"
+          :options="mapOptions"
+          style="height: 80%"
+          @update:center="centerUpdate"
+          @update:zoom="zoomUpdate"
         >
-          <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
-          <l-marker :lat-lng="[47.41322, -1.219482]" />
+          <l-tile-layer :url="url" :attribution="attribution" />
+          <l-marker :lat-lng="withPopup">
+            <l-popup>
+              <div @click="innerClick">
+                I am a popup
+                <p v-show="showParagraph">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                  sed pretium nisl, ut sagittis sapien. Sed vel sollicitudin nisi.
+                  Donec finibus semper metus id malesuada.
+                </p>
+              </div>
+            </l-popup>
+          </l-marker>
+          <l-marker :lat-lng="withTooltip">
+            <l-tooltip :options="{ permanent: true, interactive: true }">
+              <div @click="innerClick">
+                I am a tooltip
+                <p v-show="showParagraph">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                  sed pretium nisl, ut sagittis sapien. Sed vel sollicitudin nisi.
+                  Donec finibus semper metus id malesuada.
+                </p>
+              </div>
+            </l-tooltip>
+          </l-marker>
         </l-map>
       </no-ssr>
     </div>
@@ -25,13 +51,59 @@
 </template>
 
 <script>
+
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
+// import { LMap, LTileLayer, LMarker, LPopup, LTooltip } from '~/plugins/leaflet.js'
+// const isBrowser = typeof window !== 'undefined'
+let leaflet
+if (process.client) {
+  leaflet = require('leaflet')
+}
 
 export default {
   components: {
     Header,
     Footer
+  },
+  data() {
+    return {
+      zoom: 13,
+      center: {},
+      url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+      attribution:
+        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      withPopup: {},
+      withTooltip: {},
+      currentZoom: 11.5,
+      currentCenter: {},
+      showParagraph: false,
+      mapOptions: {
+        zoomSnap: 0.5
+      }
+    }
+  },
+  created() {
+    if (process.client) {
+      this.center = leaflet.latLng(47.41322, -1.219482)
+      this.withPopup = leaflet.latLng(47.41322, -1.219482)
+      this.withTooltip = leaflet.latLng(47.41422, -1.250482)
+      this.currentCenter = leaflet.latLng(47.41322, -1.219482)
+    }
+  },
+  methods: {
+    zoomUpdate(zoom) {
+      this.currentZoom = zoom
+    },
+    centerUpdate(center) {
+      this.currentCenter = center
+    },
+    showLongText() {
+      this.showParagraph = !this.showParagraph
+    },
+    innerClick() {
+      alert('Click!')
+    }
   }
 }
 </script>
