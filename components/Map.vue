@@ -20,8 +20,8 @@
           class="tree"
           :src="tree.tree"
           :alt="tree.name"
-          @mouseover="showInfo('tree-info' + i)"
-          @mouseleave="hideInfo('tree-info' + i)"
+          @mouseover="showInfo('tree-info' + i, 'tree' + i, tree.treeOnHover)"
+          @mouseleave="hideInfo('tree-info' + i, 'tree' + i, tree.tree)"
         />
         <div :id="'tree-info' + i" class="tree-info invisible">
           <h2>{{ tree.name }}</h2>
@@ -41,18 +41,16 @@ export default {
     }
   },
   methods: {
-    showInfo(tooltip) {
+    showInfo(tooltip, img, src) {
       if (process.client) {
-        // eslint-disable-next-line
-        console.log('in')
         document.getElementById(tooltip).classList.remove('invisible')
+        document.getElementById(img).src = src
       }
     },
-    hideInfo(tooltip) {
+    hideInfo(tooltip, img, src) {
       if (process.client) {
-        // eslint-disable-next-line
-        console.log('out')
         document.getElementById(tooltip).classList.add('invisible')
+        document.getElementById(img).src = src
       }
     }
   }
@@ -78,8 +76,8 @@ export default {
 .map-container {
   background-image: url('/images/map.png');
   min-height: 500px;
-  height: 500px;
-  width: 960px;
+  height: 600px;
+  width: 1200px;
   margin: 0 auto;
   background-size: contain;
   background-repeat: no-repeat;
