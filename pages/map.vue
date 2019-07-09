@@ -22,40 +22,25 @@
             :attribution="attribution"
             no-wrap:true
           />
-          <!-- <l-marker :lat-lng="withPopup">
-            <l-popup>
-              <div @click="innerClick">
-                Scandinavia
-                <p v-show="showParagraph">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                  sed pretium nisl, ut sagittis sapien. Sed vel sollicitudin nisi.
-                  Donec finibus semper metus id malesuada.
-                </p>
-              </div>
-            </l-popup>
-          </l-marker> -->
-          <l-marker v-for="(tree, i) in locations" :key="i" :lat-lng="tree.latLng">
+          <l-marker
+            :id="'map-tree' + i"
+            v-for="(tree, i) in locations"
+            :key="i"
+            :lat-lng="tree.latLng"
+            :icon="tree.currentIcon"
+            @click="tree.currentIcon === tree.tree ? tree.currentIcon = tree.treeOnHover : tree.currentIcon = tree.tree"
+            @mouseover="showInfo('map-tree' + i, tree.treeOnHover)"
+            @mouseleave="hideInfo('map-tree' + i, tree.tree)"
+          >
             <l-popup class="tree-info">
-              <div @click="innerClick">
+              <!-- <div @click="innerClick"> -->
                 <h2>{{ tree.title }}</h2>
                 <p v-show="showParagraph">
                   {{ tree.info }}
                 </p>
-              </div>
+              <!-- </div> -->
             </l-popup>
           </l-marker>
-          <!-- <l-marker :lat-lng="withTooltip">
-            <l-tooltip :options="{ permanent: true, interactive: true }">
-              <div @click="innerClick">
-                Singapore
-                <p v-show="showParagraph">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                  sed pretium nisl, ut sagittis sapien. Sed vel sollicitudin nisi.
-                  Donec finibus semper metus id malesuada.
-                </p>
-              </div>
-            </l-tooltip>
-          </l-marker> -->
         </l-map>
       </no-ssr>
     </div>
@@ -95,7 +80,8 @@ export default {
       locations: [],
       mapOptions: {
         zoomSnap: 0.5
-      }
+      },
+      defaultIcon: {}
     }
   },
   created() {
@@ -110,13 +96,41 @@ export default {
   methods: {
     createTrees() {
       for (let i = 0; i < this.homepage.maplocations.length; i++) {
+        const tree = this.createIcon(homepage.maplocations[i].tree)
+        const treeOnHover = this.createIcon(homepage.maplocations[i].treeOnHover)
         this.locations.push(
           {
             title: homepage.maplocations[i].name,
             info: homepage.maplocations[i].info,
-            latLng: leaflet.latLng(Number(homepage.maplocations[i].lat), Number(homepage.maplocations[i].lng))
+            latLng: leaflet.latLng(Number(homepage.maplocations[i].lat), Number(homepage.maplocations[i].lng)),
+            tree: tree,
+            treeOnHover: treeOnHover,
+            currentIcon: tree
           }
         )
+      }
+    },
+    createIcon(img) {
+      return leaflet.icon({
+        iconUrl: img,
+        shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png',
+        iconSize: [30, 55],
+        shadowSize: [50, 64],
+        iconAnchor: [20, 54],
+        shadowAnchor: [4, 62],
+        popupAnchor: [-3, -76]
+      })
+    },
+    showInfo(img, src) {
+      if (process.client) {
+        // eslint-disable-next-line
+        console.log('in: ', document.getElementById(img))
+        document.getElementById(img).icon = src
+      }
+    },
+    hideInfo(img, src) {
+      if (process.client) {
+        document.getElementById(img).icon = src
       }
     },
     zoomUpdate(zoom) {
