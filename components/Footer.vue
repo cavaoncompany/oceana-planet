@@ -8,7 +8,7 @@
 
 <style>
 footer {
-  padding-bottom: 20px;
+  padding: 20px;
   font-size: 13px;
 }
 </style>

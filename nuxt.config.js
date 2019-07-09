@@ -30,7 +30,7 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['~/assets/reset.css', '~/assets/main.css'],
+  css: ['~/assets/reset.css', '~/assets/main.css', '~/assets/leaflet.css'],
   /*
    ** Plugins to load before mounting the App
    */

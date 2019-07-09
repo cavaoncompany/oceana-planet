@@ -106,5 +106,111 @@
             "lat": "120",
             "lng": "95"
         }
+    ],
+    "maplocations": [
+        {
+            "name": "Canada",
+            "info": "Together we can make a difference to make changes to global warming.",
+            "tree": "/images/tree-large-round-grey.png",
+            "treeOnHover": "/images/tree-large-round.png",
+            "lat": 59.287881,
+            "lng": -129.598165
+        },
+        {
+            "name": "Singapore",
+            "info": "Together we can make a difference to make changes to global warming.",
+            "tree": "/images/tree-large-long-grey.png",
+            "treeOnHover": "/images/tree-large-long.png",
+            "lat": 1.349272,
+            "lng": 103.681741
+        },
+        {
+            "name": "Bolivia",
+            "info": "Together we can make a difference to make changes to global warming.",
+            "tree": "/images/tree-large-round-grey.png",
+            "treeOnHover": "/images/tree-large-round.png",
+            "lat": -18.777845,
+            "lng": -65.409418
+        },
+        {
+            "name": "Thailand",
+            "info": "Together we can make a difference to make changes to global warming.",
+            "tree": "/images/tree-large-long-grey.png",
+            "treeOnHover": "/images/tree-large-long.png",
+            "lat": 18.076354,
+            "lng": 99.200745
+        },
+        {
+            "name": "Tanzania",
+            "info": "Together we can make a difference to make changes to global warming.",
+            "tree": "/images/tree-large-round-grey.png",
+            "treeOnHover": "/images/tree-large-round.png",
+            "lat": -8.376910,
+            "lng": 35.699390
+        },
+        {
+            "name": "Australia",
+            "info": "Together we can make a difference to make changes to global warming.",
+            "tree": "/images/tree-large-long-grey.png",
+            "treeOnHover": "/images/tree-large-long.png",
+            "lat": -30.004448,
+            "lng": 123.756471
+        },
+        {
+            "name": "Russia",
+            "info": "Together we can make a difference to make changes to global warming.",
+            "tree": "/images/tree-small-round-grey.png",
+            "treeOnHover": "/images/tree-small-round.png",
+            "lat": 61.255561,
+            "lng": 135.940919
+        },
+        {
+            "name": "Russia",
+            "info": "Together we can make a difference to make changes to global warming.",
+            "tree": "/images/tree-large-round-grey.png",
+            "treeOnHover": "/images/tree-large-round.png",
+            "lat": 69.183030,
+            "lng": 145.713267
+        },
+        {
+            "name": "Algeria",
+            "info": "Together we can make a difference to make changes to global warming.",
+            "tree": "/images/tree-large-long-grey.png",
+            "treeOnHover": "/images/tree-large-long.png",
+            "lat": 24.044017,
+            "lng": 3.892958
+        },
+        {
+            "name": "Russia",
+            "info": "Together we can make a difference to make changes to global warming.",
+            "tree": "/images/tree-small-round-grey.png",
+            "treeOnHover": "/images/tree-small-round.png",
+            "lat": 53.641822,
+            "lng": 43.881290
+        },
+        {
+            "name": "USA",
+            "info": "Together we can make a difference to make changes to global warming.",
+            "tree": "/images/tree-large-round-grey.png",
+            "treeOnHover": "/images/tree-large-round.png",
+            "lat": 40.840488,
+            "lng": -121.811335
+        },
+        {
+            "name": "Sweden",
+            "info": "Together we can make a difference to make changes to global warming.",
+            "tree": "/images/tree-large-oval-grey.png",
+            "treeOnHover": "/images/tree-large-oval.png",
+            "lat": 66.630540,
+            "lng": 20.220464
+        },
+        {
+            "name": "Alaska",
+            "info": "Together we can make a difference to make changes to global warming.",
+            "tree": "/images/tree-large-oval-grey.png",
+            "treeOnHover": "/images/tree-large-oval.png",
+            "lat": 67.926653,
+            "lng": -159.340014
+        }
     ]
 }
