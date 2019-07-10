@@ -23,21 +23,20 @@
             no-wrap:true
           />
           <l-marker
-            :id="'map-tree' + i"
             v-for="(tree, i) in locations"
+            :id="'map-tree' + i"
             :key="i"
             :lat-lng="tree.latLng"
             :icon="tree.currentIcon"
-            @click="tree.currentIcon === tree.tree ? tree.currentIcon = tree.treeOnHover : tree.currentIcon = tree.tree"
-            @mouseover="showInfo('map-tree' + i, tree.treeOnHover)"
-            @mouseleave="hideInfo('map-tree' + i, tree.tree)"
+            @mouseover="showInfo(i, $event)"
+            @mouseleave="hideInfo(i, $event)"
           >
             <l-popup class="tree-info">
               <!-- <div @click="innerClick"> -->
-                <h2>{{ tree.title }}</h2>
-                <p v-show="showParagraph">
-                  {{ tree.info }}
-                </p>
+              <h2>{{ tree.title }}</h2>
+              <p>
+                {{ tree.info }}
+              </p>
               <!-- </div> -->
             </l-popup>
           </l-marker>
@@ -113,25 +112,42 @@ export default {
     createIcon(img) {
       return leaflet.icon({
         iconUrl: img,
-        shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png',
-        iconSize: [30, 55],
+        shadowUrl: '',
+        iconSize: [20, 40],
         shadowSize: [50, 64],
-        iconAnchor: [20, 54],
+        iconAnchor: [10, 39],
         shadowAnchor: [4, 62],
         popupAnchor: [-3, -76]
       })
     },
-    showInfo(img, src) {
+    showInfo(index, e) {
       if (process.client) {
-        // eslint-disable-next-line
-        console.log('in: ', document.getElementById(img))
-        document.getElementById(img).icon = src
+        for (let i = 0; i < this.locations.length; i++) {
+          this.locations[i].currentIcon = this.locations[i].tree
+        }
+        this.locations[index].currentIcon = this.locations[index].treeOnHover
+        this.openPopup(e)
       }
     },
-    hideInfo(img, src) {
+    hideInfo(index, e) {
       if (process.client) {
-        document.getElementById(img).icon = src
+        this.locations[index].currentIcon = this.locations[index].tree
+        this.closePopup(e)
       }
+    },
+    openPopup(event) {
+      const self = this
+      this.popupTarget = event.target
+      this.$nextTick(function () {
+        self.popupTarget.openPopup()
+      })
+    },
+    closePopup(event) {
+      const self = this
+      this.popupTarget = event.target
+      this.$nextTick(function () {
+        self.popupTarget.closePopup()
+      })
     },
     zoomUpdate(zoom) {
       this.currentZoom = zoom
@@ -171,7 +187,7 @@ export default {
 }
 #map {
   height: 70vh;
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
 }
 .mappy {
