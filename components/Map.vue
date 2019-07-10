@@ -90,9 +90,6 @@ export default {
   font-size: 24px;
 }
 .map-container {
-  /* background-image: url('/images/map.png');
-  height: 100%;
-  width: 100%; */
   margin: 0 auto;
   background-size: cover;
   background-repeat: no-repeat;
@@ -107,7 +104,7 @@ export default {
 .tree-container {
   position: absolute;
   z-index: 10;
-  height: 40px !important;
+  height: 8%;
   width: 20px;
 }
 .tree {
