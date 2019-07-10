@@ -113,7 +113,8 @@ export default {
 .map-container {
   background-image: url('/images/map.png');
   min-height: 500px;
-  width: 100%;
+  width: 1200px;
+  height: 600px;
   margin: 0 auto;
   background-size: cover;
   background-repeat: no-repeat;
