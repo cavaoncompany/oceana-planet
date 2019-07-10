@@ -130,7 +130,7 @@ export default {
 .tree-container {
   position: absolute;
   z-index: 10;
-  height: 10% !important;
+  height: 40px !important;
   width: 20px;
 }
 .tree {

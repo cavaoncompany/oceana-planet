@@ -24,4 +24,13 @@ html, body, #__nuxt, #__layout, #__layout div {
   #map {
     overflow: hidden;
   }
+  .map-container .tree-container {
+    height: 30px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .map-container .tree-container {
+    height: 21px !important;
+  }
 }
