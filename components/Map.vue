@@ -105,7 +105,7 @@ export default {
 }
 .info {
   margin: 50px 0;
-  width: 370px;
+  max-width: 370px;
   font-size: 18px;
   height: 100px !important;
 }

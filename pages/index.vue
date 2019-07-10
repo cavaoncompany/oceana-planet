@@ -30,4 +30,9 @@ export default {
   background-color: #60abcb;
   font-family: 'Ubuntu', sans-serif;
 }
+/* * {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+  } */
 </style>
