@@ -15,12 +15,11 @@
           :center="center"
           :options="mapOptions"
           @update:center="centerUpdate"
-          @update:zoom="zoomUpdate"
         >
           <l-tile-layer
             :url="url"
             :attribution="attribution"
-            no-wrap:true
+            :noWrap=true
           />
           <l-marker
             v-for="(tree, i) in locations"
@@ -66,7 +65,7 @@ export default {
   data() {
     return {
       homepage: homepage,
-      zoom: 1.45,
+      zoom: 2.4,
       center: {},
       url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
       attribution:
@@ -78,17 +77,17 @@ export default {
       showParagraph: true,
       locations: [],
       mapOptions: {
-        zoomSnap: 0.5
+        scrollWheelZoom: false
       },
       defaultIcon: {}
     }
   },
   created() {
     if (process.client) {
-      this.center = leaflet.latLng(22.41322, -1.219482)
+      this.center = leaflet.latLng(24.41322, -0.259482)
       this.withPopup = leaflet.latLng(47.41322, -1.219482)
       this.withTooltip = leaflet.latLng(64.41422, -1.250482)
-      this.currentCenter = leaflet.latLng(47.41322, -1.219482)
+      this.currentCenter = leaflet.latLng(48.41322, -1.419482)
       this.createTrees()
     }
   },
@@ -186,11 +185,13 @@ export default {
   font-size: 24px;
 }
 #map {
-  height: 70vh;
+  min-height: 70vh;
+  height: 100%;
   width: 100%;
   margin: 0 auto;
 }
 .mappy {
+  min-height: 100vh;
   height: 100%;
   width: 100%;
   background: rgba(171, 210, 222, 1);
