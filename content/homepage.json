@@ -8,7 +8,7 @@
             "tree": "/images/tree-large-round-grey.png",
             "treeOnHover": "/images/tree-large-round.png",
             "lat": 2,
-            "lng": -43
+            "lng": -45
         },
         {
             "name": "Singapore",
@@ -88,7 +88,7 @@
             "tree": "/images/tree-large-round-grey.png",
             "treeOnHover": "/images/tree-large-round.png",
             "lat": 5,
-            "lng": -41
+            "lng": -43
         },
         {
             "name": "Scandinavia",
