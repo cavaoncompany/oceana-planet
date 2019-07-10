@@ -130,11 +130,13 @@ export default {
 .tree-container {
   position: absolute;
   z-index: 10;
+  height: 50px !important;
+  width: 20px;
 }
 .tree {
   width: auto;
   height: 40px;
-  z-index: 150;
+  z-index: 140;
 }
 .tree-info {
   font-size: 12px;
@@ -145,9 +147,10 @@ export default {
   background-position-y: 10px;
   width: 150px;
   padding: 20px;
-  z-index: 1;
+  z-index: 156;
   border-radius: 8px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+  height: 100px !important;
 }
 .tree-info h2 {
   color: #4e9939;
