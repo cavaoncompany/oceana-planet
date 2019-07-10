@@ -23,7 +23,6 @@ export default {
 <style>
 .container {
   margin: 0 auto;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

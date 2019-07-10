@@ -89,6 +89,18 @@ export default {
       this.withTooltip = leaflet.latLng(64.41422, -1.250482)
       this.currentCenter = leaflet.latLng(48.41322, -1.419482)
       this.createTrees()
+      // eslint-disable-next-line
+      window.addEventListener('resize', function() {
+        // eslint-disable-next-line
+        const width = window.innerWidth
+        if (width <= 768) {
+          this.zoom = 1
+        } else if (width <= 1200) {
+          this.zoom = 2
+        } else {
+          this.zoom = 2.5
+        }
+      })
     }
   },
   methods: {

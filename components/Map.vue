@@ -37,7 +37,38 @@ import home from '../content/homepage.json'
 export default {
   data() {
     return {
-      home: home
+      home: home,
+      windowWidth: 0,
+      windowHeight: 0
+    }
+  },
+  created() {
+    if (process.client) {
+      // eslint-disable-next-line
+      window.addEventListener('resize', this.getWindowSize)
+    }
+  },
+  watch: {
+    windowWidth: function () {
+      // eslint-disable-next-line
+      console.log('here')
+      this.getWindowSize()
+      for (let i = 0; i < home.locations.length; i++) {
+        // eslint-disable-next-line
+        console.log('size', 1200-this.windowWidth, 'lat', home.locations[i].lat)
+        if (this.windowWidth > 1200) {
+          home.locations[i].lat = Number(home.locations[i].lat) + ((this.windowWidth - 1200) * 0.468)
+          // eslint-disable-next-line
+          console.log('loc', home.locations[i].lat)
+        } else {
+          home.locations[i].lat = Number(home.locations[i].lat) + ((1200 - this.windowWidth) / 100)
+          // eslint-disable-next-line
+          console.log('loc', home.locations[i].lat)
+        }
+      }
+    },
+    windowHeight: function () {
+      // do
     }
   },
   methods: {
@@ -52,6 +83,12 @@ export default {
         document.getElementById(tooltip).classList.add('invisible')
         document.getElementById(img).src = src
       }
+    },
+    getWindowSize() {
+      // eslint-disable-next-line
+      console.log('width: ', window.innerWidth, 'height: ', window.innerHeight)
+      this.windowWidth = window.innerWidth
+      this.windowHeight = window.innerHeight
     }
   }
 }
@@ -76,10 +113,9 @@ export default {
 .map-container {
   background-image: url('/images/map.png');
   min-height: 500px;
-  height: 600px;
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   text-align: left;
   position: relative;

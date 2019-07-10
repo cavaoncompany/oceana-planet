@@ -2,3 +2,26 @@ body {
   background-color: #60abcb;
   font-family: 'Ubuntu', sans-serif;
 }
+
+html, body {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  header, .header {
+    padding: 0 20px;
+  }
+  .header-left .logo {
+    width: 150px;
+    height: 80px;
+  }
+  .header-left .logo p {
+    font-size: 18px;
+  }
+  header .header-right{
+    width: 70%;
+  }
+  #map {
+    overflow: hidden;
+  }
+}
