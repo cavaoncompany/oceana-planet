@@ -7,104 +7,103 @@
             "info": "Together we can make a difference to make changes to global warming.",
             "tree": "/images/tree-large-round-grey.png",
             "treeOnHover": "/images/tree-large-round.png",
-            "lat": "26",
-            "lng": "66"
+            "lat": 2,
+            "lng": -43
         },
         {
             "name": "Singapore",
             "info": "Together we can make a difference to make changes to global warming.",
             "tree": "/images/tree-large-long-grey.png",
             "treeOnHover": "/images/tree-large-long.png",
-            "lat": "758",
-            "lng": "73"
+            "lat": 72,
+            "lng": -28
         },
         {
             "name": "South America",
             "info": "Together we can make a difference to make changes to global warming.",
             "tree": "/images/tree-large-round-grey.png",
             "treeOnHover": "/images/tree-large-round.png",
-            "lat": "311",
-            "lng": "354"
+            "lat": 28,
+            "lng": -20
         },
         {
             "name": "Singapore",
             "info": "Together we can make a difference to make changes to global warming.",
             "tree": "/images/tree-large-long-grey.png",
             "treeOnHover": "/images/tree-large-long.png",
-            "lat": "886",
-            "lng": "104"
+            "lat": 79,
+            "lng": -35
         },
         {
             "name": "Africa",
             "info": "Together we can make a difference to make changes to global warming.",
             "tree": "/images/tree-large-round-grey.png",
             "treeOnHover": "/images/tree-large-round.png",
-            "lat": "619",
-            "lng": "276"
+            "lat": 48,
+            "lng": -27
         },
         {
             "name": "Australia",
             "info": "Together we can make a difference to make changes to global warming.",
             "tree": "/images/tree-large-long-grey.png",
             "treeOnHover": "/images/tree-large-long.png",
-            "lat": "980",
-            "lng": "413"
+            "lat": 84,
+            "lng": -13
         },
         {
             "name": "Singapore",
             "info": "Together we can make a difference to make changes to global warming.",
             "tree": "/images/tree-small-round-grey.png",
             "treeOnHover": "/images/tree-small-round.png",
-            "lat": "900",
-            "lng": "80"
+            "lat":60,
+            "lng": -35
         },
         {
             "name": "Singapore",
             "info": "Together we can make a difference to make changes to global warming.",
             "tree": "/images/tree-large-round-grey.png",
             "treeOnHover": "/images/tree-large-round.png",
-            "lat": "1000",
-            "lng": "70"
-        },
+            "lat": 65,
+            "lng": -29        },
         {
             "name": "Africa",
             "info": "Together we can make a difference to make changes to global warming.",
             "tree": "/images/tree-large-long-grey.png",
             "treeOnHover": "/images/tree-large-long.png",
-            "lat": "610",
-            "lng": "363"
+            "lat": 54,
+            "lng": -17
         },
         {
             "name": "Singapore",
             "info": "Together we can make a difference to make changes to global warming.",
             "tree": "/images/tree-small-round-grey.png",
             "treeOnHover": "/images/tree-small-round.png",
-            "lat": "730",
-            "lng": "190"
+            "lat": 89,
+            "lng": -43
         },
         {
             "name": "North America",
             "info": "Together we can make a difference to make changes to global warming.",
             "tree": "/images/tree-large-round-grey.png",
             "treeOnHover": "/images/tree-large-round.png",
-            "lat": "150",
-            "lng": "80"
+            "lat": 5,
+            "lng": -41
         },
         {
             "name": "Scandinavia",
             "info": "Together we can make a difference to make changes to global warming.",
             "tree": "/images/tree-large-oval-grey.png",
             "treeOnHover": "/images/tree-large-oval.png",
-            "lat": "602",
-            "lng": "80"
+            "lat": 55,
+            "lng": -43
         },
         {
             "name": "North America",
             "info": "Together we can make a difference to make changes to global warming.",
             "tree": "/images/tree-large-oval-grey.png",
             "treeOnHover": "/images/tree-large-oval.png",
-            "lat": "120",
-            "lng": "95"
+            "lat": 9,
+            "lng": -42
         }
     ],
     "maplocations": [

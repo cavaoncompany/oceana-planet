@@ -93,6 +93,8 @@ export default {
       window.addEventListener('resize', function() {
         // eslint-disable-next-line
         const width = window.innerWidth
+        // eslint-disable-next-line
+        console.log('width: ', width)
         if (width <= 768) {
           this.zoom = 1
         } else if (width <= 1200) {

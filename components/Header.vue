@@ -56,6 +56,7 @@ export default {
   padding: 0 50px;
   display: flex;
   justify-content: space-between;
+  height: 85px;
 }
 .logo {
   background-color: #15468e;

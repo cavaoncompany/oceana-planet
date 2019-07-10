@@ -3,7 +3,7 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
-html, body {
+html, body, #__nuxt, #__layout, #__layout div {
   height: 100%;
 }
 

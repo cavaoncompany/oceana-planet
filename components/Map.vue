@@ -7,12 +7,13 @@
       </p>
     </div>
     <div class="map-container">
+      <img class="world-map" src="/images/map.png" alt="world map">
       <div
         v-for="(tree, i) in home.locations"
         :key="i"
         class="tree-container"
         :style="
-          `marginLeft: ` + tree.lat + `px; marginTop: ` + tree.lng + `px;`
+          `marginLeft: ` + tree.lat + `%; marginTop: ` + tree.lng + `%;`
         "
       >
         <img
@@ -53,19 +54,19 @@ export default {
       // eslint-disable-next-line
       console.log('here')
       this.getWindowSize()
-      for (let i = 0; i < home.locations.length; i++) {
-        // eslint-disable-next-line
-        console.log('size', 1200-this.windowWidth, 'lat', home.locations[i].lat)
-        if (this.windowWidth > 1200) {
-          home.locations[i].lat = Number(home.locations[i].lat) + ((this.windowWidth - 1200) * 0.468)
-          // eslint-disable-next-line
-          console.log('loc', home.locations[i].lat)
-        } else {
-          home.locations[i].lat = Number(home.locations[i].lat) + ((1200 - this.windowWidth) / 100)
-          // eslint-disable-next-line
-          console.log('loc', home.locations[i].lat)
-        }
-      }
+      // for (let i = 0; i < home.locations.length; i++) {
+      //   // eslint-disable-next-line
+      //   console.log('size', 1200-this.windowWidth, 'lat', home.locations[i].lat)
+      //   if (this.windowWidth > 1200) {
+      //     home.locations[i].lat = Number(home.locations[i].lat) + ((this.windowWidth - 1200) * 0.468)
+      //     // eslint-disable-next-line
+      //     console.log('loc', home.locations[i].lat)
+      //   } else {
+      //     home.locations[i].lat = Number(home.locations[i].lat) + ((1200 - this.windowWidth) / 100)
+      //     // eslint-disable-next-line
+      //     console.log('loc', home.locations[i].lat)
+      //   }
+      // }
     },
     windowHeight: function () {
       // do
@@ -106,24 +107,29 @@ export default {
   margin: 50px 0;
   width: 370px;
   font-size: 18px;
+  height: 100px !important;
 }
 .info h1 {
   font-size: 24px;
 }
 .map-container {
-  background-image: url('/images/map.png');
-  min-height: 500px;
-  width: 1200px;
-  height: 600px;
+  /* background-image: url('/images/map.png');
+  height: 100%;
+  width: 100%; */
   margin: 0 auto;
   background-size: cover;
   background-repeat: no-repeat;
   text-align: left;
   position: relative;
+  display: inline-block;
+}
+.map-container .world-map {
+  width: 100%;
+  z-index: -1;
 }
 .tree-container {
   position: absolute;
-  z-index: 0;
+  z-index: 10;
 }
 .tree {
   width: auto;
