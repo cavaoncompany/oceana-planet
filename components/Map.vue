@@ -6,27 +6,33 @@
         {{ home.infoBlurb }}
       </p>
     </div>
-    <div class="map-container">
-      <img class="world-map" src="/images/map.png" alt="world map">
-      <div
-        v-for="(tree, i) in home.locations"
-        :key="i"
-        class="tree-container"
-        :style="
-          `marginLeft: ` + tree.lat + `%; marginTop: ` + tree.lng + `%;`
-        "
-      >
-        <img
-          :id="'tree' + i"
-          class="tree"
-          :src="tree.tree"
-          :alt="tree.name"
-          @mouseover="showInfo('tree-info' + i, 'tree' + i, tree.treeOnHover)"
-          @mouseleave="hideInfo('tree-info' + i, 'tree' + i, tree.tree)"
-        />
-        <div :id="'tree-info' + i" class="tree-info invisible">
-          <h2>{{ tree.name }}</h2>
-          <p>{{ tree.info }}</p>
+    <div class="map-container-wrapper">
+      <div class="map-container">
+        <img class="world-map" src="/images/map.png" alt="world map">
+        <div
+          v-for="(tree, i) in home.locations"
+          :key="i"
+          class="tree-container"
+          :style="
+            `marginLeft: ` + tree.lat + `%; marginTop: ` + tree.lng + `%;`
+          "
+        >
+          <img
+            :id="'tree' + i"
+            class="tree"
+            :src="tree.tree"
+            :alt="tree.name"
+            @mouseover="showInfo('tree-info' + i, 'tree' + i, tree.treeOnHover)"
+            @mouseleave="hideInfo('tree-info' + i, 'tree' + i, tree.tree)"
+          />
+          <div
+            :id="'tree-info' + i"
+            class="tree-info invisible"
+            :class="{'right-align' : tree.lat > 50}"
+          >
+            <h2>{{ tree.name }}</h2>
+            <p>{{ tree.info }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -49,29 +55,6 @@ export default {
       window.addEventListener('resize', this.getWindowSize)
     }
   },
-  watch: {
-    windowWidth: function () {
-      // eslint-disable-next-line
-      console.log('here')
-      this.getWindowSize()
-      // for (let i = 0; i < home.locations.length; i++) {
-      //   // eslint-disable-next-line
-      //   console.log('size', 1200-this.windowWidth, 'lat', home.locations[i].lat)
-      //   if (this.windowWidth > 1200) {
-      //     home.locations[i].lat = Number(home.locations[i].lat) + ((this.windowWidth - 1200) * 0.468)
-      //     // eslint-disable-next-line
-      //     console.log('loc', home.locations[i].lat)
-      //   } else {
-      //     home.locations[i].lat = Number(home.locations[i].lat) + ((1200 - this.windowWidth) / 100)
-      //     // eslint-disable-next-line
-      //     console.log('loc', home.locations[i].lat)
-      //   }
-      // }
-    },
-    windowHeight: function () {
-      // do
-    }
-  },
   methods: {
     showInfo(tooltip, img, src) {
       if (process.client) {
@@ -84,12 +67,6 @@ export default {
         document.getElementById(tooltip).classList.add('invisible')
         document.getElementById(img).src = src
       }
-    },
-    getWindowSize() {
-      // eslint-disable-next-line
-      console.log('width: ', window.innerWidth, 'height: ', window.innerHeight)
-      this.windowWidth = window.innerWidth
-      this.windowHeight = window.innerHeight
     }
   }
 }
@@ -159,5 +136,9 @@ export default {
 }
 .invisible {
   visibility: hidden;
+}
+.right-align {
+  position: absolute;
+  right: 0;
 }
 </style>
