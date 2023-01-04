@@ -19,7 +19,7 @@
     "express": "^4.16.4",
     "leaflet": "^1.5.1",
     "leaflet.markercluster": "^1.4.1",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "vue2-leaflet": "^2.1.1"
   },
   "devDependencies": {
